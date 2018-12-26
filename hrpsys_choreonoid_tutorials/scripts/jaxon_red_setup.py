@@ -48,13 +48,11 @@ class JAXON_RED_HrpsysConfigurator(ChoreonoidHrpsysConfiguratorOrg):
         self.el_svc.setServoErrorLimit("LARM_F_JOINT0", sys.float_info.max)
         self.el_svc.setServoErrorLimit("LARM_F_JOINT1", sys.float_info.max)
         ###
-        self.startAutoBalancer()
+        self.abc_svc.startAutoBalancer(['rleg','lleg'])
         # Suppress limit over message and behave like real robot that always angle-vector is in seq.
         # Latter four 0.0 are for hands.
         self.seq_svc.setJointAngles(self.jaxonResetPose()+[0.0, 0.0, 0.0, 0.0] , 1.0)
-        self.ic_svc.startImpedanceController("larm")
-        self.ic_svc.startImpedanceController("rarm")
-        self.startStabilizer()
+        self.abc_svc.startStabilizer()
 
 if __name__ == '__main__':
     hcf = JAXON_RED_HrpsysConfigurator("JAXON_RED")
