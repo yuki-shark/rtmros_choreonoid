@@ -1,0 +1,600 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "World"
+      plugin: Body
+      class: WorldItem
+      data: 
+        collisionDetection: false
+        collisionDetector: AISTCollisionDetector
+        materialTableFile: "${SHARE}/default/materials.yaml"
+      children: 
+        - 
+          id: 2
+          name: "AISTSimulator"
+          plugin: Body
+          class: AISTSimulatorItem
+          data: 
+            realtimeSync: true
+            recording: "full"
+            timeRangeMode: "Unlimited"
+            timeLength: 180
+            allLinkPositionOutputMode: false
+            deviceStateOutput: true
+            controllerThreads: true
+            recordCollisionData: false
+            controllerOptions: ""
+            dynamicsMode: "Forward dynamics"
+            integrationMode: "Runge Kutta"
+            gravity: [ 0, 0, -9.80665 ]
+            staticFriction: 1
+            dynamicFriction: 1
+            cullingThresh: 0.005
+            contactCullingDepth: 0.03
+            errorCriterion: 0.001
+            maxNumIterations: 1000
+            contactCorrectionDepth: 0.0001
+            contactCorrectionVelocityRatio: 1
+            kinematicWalking: false
+            2Dmode: false
+            oldAccelSensorMode: false
+          children: 
+            - 
+              id: 3
+              name: "RangeSensorSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ CHIDORI ]
+                targetSensors: [ HEAD_RANGE ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 4
+              name: "FootDepthSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ CHIDORI ]
+                targetSensors: [ FOOT_DEPTH ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 5
+              name: "ForwardDepthSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ CHIDORI ]
+                targetSensors: [ FORWARD_DEPTH ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 6
+              name: "FootCameraSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ CHIDORI ]
+                targetSensors: [ FOOT_CAMERA ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 7
+              name: "ForwardCameraSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ CHIDORI ]
+                targetSensors: [ FORWARD_CAMERA ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+        - 
+          id: 8
+          name: "floor"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/floor_color.body"
+            currentBaseLink: ""
+            rootPosition: [ 0, 0, -0.1 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0, 0, -0.1 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: false
+        - 
+          id: 9
+          name: "CHIDORI"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_hrp2/jsk_models/CHIDORI/CHIDORImain_bush.wrl"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.054738261, 0.00194830827, 0.949097129 ]
+            rootAttitude: [ 
+              0.999680535, -0.00882770806, -0.0236833163, 
+              0.00930545388, 0.999753895, 0.0201384632, 
+              0.0234997112, -0.0203524137, 0.999516655 ]
+            jointPositions: [ 
+               0.000750,  0.006891, -0.340108,  0.690926, -0.327960,  0.012960, -0.000364,  0.005484, -0.355015,  0.724268, 
+              -0.347478,  0.013706,  0.353829,  0.000251,  0.000642,  0.000858,  0.000277,  0.000737,  0.000770,  15.236986, 
+               0.000091,  15.087982,  0.000106,  15.130694,  0.000090,  15.468232,  0.000097 ]
+            initialRootPosition: [ -0.0481471318, -0.00826113929, 0.94938503 ]
+            initialRootAttitude: [ 
+              0.999884648, -0.00954520704, -0.0118144074, 
+              0.00968122582, 0.999886893, 0.0115098169, 
+              0.0117032075, -0.0116228672, 0.999863963 ]
+            initialJointPositions: [ 
+               0.000445,  0.011239, -0.346928,  0.696529, -0.338151,  0.001222, -0.000389,  0.010034, -0.355312,  0.715940, 
+              -0.348994,  0.000002, -0.255359,  0.000257, -0.000687,  0.000186,  0.000272,  0.000671,  0.000129,  14.525749, 
+               0.000101,  14.709542,  0.000116,  14.657418,  0.000100,  14.205839,  0.000107 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+          children: 
+            - 
+              id: 10
+              name: "BodyRTC"
+              plugin: OpenRTM
+              class: BodyRTCItem
+              data: 
+                isNoDelayMode: true
+                controllerOptions: ""
+                moduleName: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/lib/RobotHardware_choreonoid"
+                confFileName: "${PROJECT_DIR}/BodyRTC_CHIDORI.RH.conf"
+                configurationMode: "Use Configuration File"
+                AutoConnect: false
+                InstanceName: "CHIDORI(Robot)0"
+                bodyPeriodicRate: 0.002
+                baseDirectory: "RTC directory"
+        - 
+          id: 11
+          name: "box1"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
+            currentBaseLink: "body"
+            rootPosition: [ -0.145165893, -0.117515154, 0.00993702677 ]
+            rootAttitude: [ 
+              0.999999974, 0.000116227586, -0.000193956068, 
+              -0.000116218426, 0.999999992, 4.7236719e-05, 
+              0.000193961557, -4.72141765e-05, 0.99999998 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.14518258, -0.117530441, 0.00991550696 ]
+            initialRootAttitude: [ 
+              0.999999988, 0.000125960354, -9.5518227e-05, 
+              -0.000125957372, 0.999999992, 3.1221775e-05, 
+              9.55221589e-05, -3.12097433e-05, 0.999999995 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 12
+          name: "box1"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
+            currentBaseLink: "body"
+            rootPosition: [ 0.155880278, -0.138547036, 0.00998653552 ]
+            rootAttitude: [ 
+              0.999999872, -3.36755133e-05, -0.000503923896, 
+              3.37315682e-05, 0.999999993, 0.000111228659, 
+              0.000503920147, -0.000111245643, 0.999999867 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0.155894959, -0.13853511, 0.00995246029 ]
+            initialRootAttitude: [ 
+              0.999999941, -6.0782395e-07, -0.000344407871, 
+              7.29906298e-07, 0.999999937, 0.000354470248, 
+              0.000344407634, -0.000354470479, 0.999999878 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 13
+          name: "box1"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
+            currentBaseLink: "body"
+            rootPosition: [ -0.0332283943, 0.0905484731, 0.00994337535 ]
+            rootAttitude: [ 
+              0.999999944, 8.05686371e-05, -0.00032406656, 
+              -8.05686491e-05, 0.999999997, -2.38825976e-08, 
+              0.000324066557, 4.99922012e-08, 0.999999947 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.124023806, 0.0904791642, 0.0106500456 ]
+            initialRootAttitude: [ 
+              0.999999944, 8.05686371e-05, -0.00032406656, 
+              -8.05686491e-05, 0.999999997, -2.38825976e-08, 
+              0.000324066557, 4.99922012e-08, 0.999999947 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+    - 
+      id: 14
+      name: "ros_service_server.py"
+      plugin: Python
+      class: PythonScriptItem
+      data: 
+        file: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/scripts/ros_service_server.py"
+        executionOnLoading: true
+        backgroundExecution: false
+    - 
+      id: 15
+      name: "external_force_sample.py"
+      plugin: Python
+      class: PythonScriptItem
+      data: 
+        file: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/scripts/external_force_sample.py"
+        executionOnLoading: true
+        backgroundExecution: true
+    - 
+      id: 16
+      name: "uneventerrain"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/tmp/uneventerrain.stl"
+        currentBaseLink: "Root"
+        rootPosition: [ 0, 0, -0.6 ]
+        rootAttitude: [ 
+          2.22044605e-16, -1, 0, 
+          1, 2.22044605e-16, 0, 
+          0, 0, 1 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0, 0, -0.6 ]
+        initialRootAttitude: [ 
+          2.22044605e-16, -1, 0, 
+          1, 2.22044605e-16, 0, 
+          0, 0, 1 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: false
+views: 
+  - 
+    id: 0
+    plugin: Base
+    class: ItemPropertyView
+    mounted: true
+  - 
+    id: 1
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15 ]
+      expanded: [ 1, 10, 11, 12, 13 ]
+  - 
+    id: 2
+    plugin: Base
+    class: MessageView
+    mounted: true
+  - 
+    id: 3
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: true
+      fog: true
+      floorGrid: true
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: true
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          isCurrent: true
+          fieldOfView: 0.6978
+          near: 0.01
+          far: 100
+          eye: [ 0.920906319, 2.42630057, 1.32095701 ]
+          direction: [ -0.0876241871, -0.962409266, -0.257080546 ]
+          up: [ -0.0233099208, -0.25602159, 0.96638998 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+          near: 0.01
+          far: 100
+      backgroundColor: [ 0.53725493, 0.815686285, 1 ]
+      gridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 4
+    plugin: Body
+    class: BodyLinkView
+    mounted: true
+    state: 
+      showRotationMatrix: false
+  - 
+    id: 5
+    plugin: Body
+    class: JointSliderView
+    mounted: true
+    state: 
+      showAllJoints: true
+      jointId: false
+      name: true
+      numColumns: 1
+      spinBox: true
+      slider: true
+      labelOnLeft: true
+      currentBodyItem: 13
+  - 
+    id: 6
+    plugin: Body
+    class: LinkSelectionView
+    mounted: true
+    state: 
+      listingMode: "Link List"
+      currentBodyItem: 13
+      bodyItems: 
+        - 
+          id: 8
+          selectedLinks: [ 0 ]
+        - 
+          id: 9
+          selectedLinks: [ 2 ]
+        - 
+          id: 12
+          selectedLinks: [ 0 ]
+  - 
+    id: 7
+    plugin: OpenRTM
+    class: RTSNameServerView
+    mounted: true
+  - 
+    id: 8
+    plugin: Python
+    class: PythonConsoleView
+    mounted: true
+toolbars: 
+  "TimeBar": 
+    minTime: 0
+    maxTime: 191.916
+    frameRate: 1000
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 10.91
+    speedScale: 1
+    syncToOngoingUpdates: true
+    autoExpansion: true
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 13
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
+  "BodyMotionGenerationBar": 
+    autoGenerationForNewBody: true
+    balancer: false
+    autoGeneration: false
+    timeScaleRatio: 1
+    preInitialDuration: 1
+    postFinalDuration: 1
+    onlyTimeBarRange: false
+    makeNewBodyItem: true
+    stealthyStepMode: true
+    stealthyHeightRatioThresh: 2
+    flatLiftingHeight: 0.005
+    flatLandingHeight: 0.005
+    impactReductionHeight: 0.005
+    impactReductionTime: 0.04
+    autoZmp: true
+    minZmpTransitionTime: 0.1
+    zmpCenteringTimeThresh: 0.03
+    zmpTimeMarginBeforeLiftingSpin: 0
+    zmpMaxDistanceFromCenter: 0.02
+    allLinkPositions: false
+    lipSyncMix: false
+    timeToStartBalancer: 0
+    balancerIterations: 2
+    plainBalancerMode: false
+    boundaryConditionType: position
+    boundarySmootherType: quintic
+    boundarySmootherTime: 0.5
+    boundaryCmAdjustment: false
+    boundaryCmAdjustmentTime: 1
+    waistHeightRelaxation: false
+    gravity: 9.8
+    dynamicsTimeRatio: 1
+Body: 
+  "BodyMotionEngine": 
+    updateJointVelocities: false
+  "EditableSceneBody": 
+    editableSceneBodies: 
+      - 
+        bodyItem: 8
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 9
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 11
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 12
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 13
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 16
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+    staticModelEditing: true
+  "KinematicFaultChecker": 
+    checkJointPositions: true
+    angleMargin: 0
+    translationMargin: 0
+    checkJointVelocities: true
+    velocityLimitRatio: 100
+    targetJoints: all
+    checkSelfCollisions: true
+    onlyTimeBarRange: false
+OpenRTM: 
+  "deleteUnmanagedRTCsOnStartingSimulation": false
+viewAreas: 
+  - 
+    type: embedded
+    tabs: true
+    contents: 
+      type: splitter
+      orientation: horizontal
+      sizes: [ 267, 3567 ]
+      children: 
+        - 
+          type: splitter
+          orientation: vertical
+          sizes: [ 1031, 1029 ]
+          children: 
+            - 
+              type: pane
+              views: [ 1 ]
+              current: 1
+            - 
+              type: pane
+              views: [ 0, 6, 7 ]
+              current: 0
+        - 
+          type: splitter
+          orientation: vertical
+          sizes: [ 1941, 119 ]
+          children: 
+            - 
+              type: splitter
+              orientation: horizontal
+              sizes: [ 498, 3063 ]
+              children: 
+                - 
+                  type: pane
+                  views: [ 4, 5 ]
+                  current: 4
+                - 
+                  type: pane
+                  views: [ 3 ]
+                  current: 3
+            - 
+              type: pane
+              views: [ 2, 8 ]
+              current: 8
+layoutOfToolBars: 
+  rows: 
+    - 
+      - { name: "FileBar", x: 0, priority: 0 }
+      - { name: "ScriptBar", x: 47, priority: 3 }
+      - { name: "TimeBar", x: 47, priority: 1 }
+      - { name: "SceneBar", x: 1455, priority: 2 }
+      - { name: "SimulationBar", x: 1464, priority: 0 }
