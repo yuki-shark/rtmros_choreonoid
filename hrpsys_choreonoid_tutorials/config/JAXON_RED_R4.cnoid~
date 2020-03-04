@@ -132,28 +132,28 @@ items:
           data: 
             modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/JAXON_JVRC/JAXON_JVRCmain_hrpsys_bush.wrl"
             currentBaseLink: "WAIST"
-            rootPosition: [ -0.00714980308, 0.072541742, 0.973681411 ]
+            rootPosition: [ -2.9973743, -1.49997305, 0.974169941 ]
             rootAttitude: [ 
-              0.999739539, -2.31003527e-05, -0.0228222059, 
-              1.92701442e-05, 0.999999986, -0.000168048056, 
-              0.0228222095, 0.000167564499, 0.999739525 ]
+              0.99988678, -3.79334336e-05, 0.0150474499, 
+              3.87659427e-05, 0.999999998, -5.50339154e-05, 
+              -0.0150474477, 5.5611013e-05, 0.999886779 ]
             jointPositions: [ 
-              -0.000004,  0.000829, -0.243420,  0.697529, -0.431626, -0.001450, -0.000107, -0.000102, -0.240405,  0.696287, 
-              -0.433235,  0.000066, -0.000035, -0.001658,  0.000001,  0.000001,  0.001241, -0.000079,  0.697254, -0.346602, 
-              -0.085710, -1.393100,  0.000096,  0.000389, -0.348330,  0.000080,  0.697253,  0.346597,  0.085706, -1.393102, 
-              -0.000096, -0.000390, -0.348330,  0.000395,  0.000790,  0.000395,  0.000787,  55.317740,  0.000578, -0.000426, 
-              -0.000194,  0.000597,  0.000218,  0.000228 ]
-            initialRootPosition: [ -0.00520540784, 0.0726246499, 0.973959451 ]
+               0.000044,  0.000675, -0.269595,  0.689915, -0.434060, -0.001454, -0.000202, -0.000254, -0.266609,  0.688706, 
+              -0.435879, -0.000499, -0.000006, -0.000795,  0.000000, -0.000000,  0.000214,  0.000017,  0.697949, -0.348663, 
+              -0.087009, -1.395747,  0.000016,  0.000064, -0.348945, -0.000017,  0.697949,  0.348663,  0.087008, -1.395747, 
+              -0.000016, -0.000064, -0.348945,  0.000064,  0.000128,  0.000064,  0.000128,  83.932740,  0.000588,  0.000025, 
+              -0.001442,  0.000587, -0.000012, -0.001448 ]
+            initialRootPosition: [ -3.04646088, -1.5, 0.975876406 ]
             initialRootAttitude: [ 
-              0.99983652, -4.49058374e-06, -0.0180812849, 
-              2.86360848e-06, 0.999999996, -9.00070649e-05, 
-              0.0180812852, 8.99405729e-05, 0.999836516 ]
+              0.999519594, 1.90683412e-05, -0.0309932517, 
+              -1.18856481e-05, 0.999999973, 0.000231934442, 
+              0.0309932553, -0.000231454645, 0.999519567 ]
             initialJointPositions: [ 
-              -0.000002,  0.000824, -0.244800,  0.694460, -0.431650, -0.001458, -0.000090, -0.000117, -0.241829,  0.693298, 
-              -0.433244,  0.000086, -0.000033, -0.000826,  0.000000,  0.000001,  0.001034, -0.000061,  0.697393, -0.347012, 
-              -0.085968, -1.393631,  0.000080,  0.000325, -0.348453,  0.000061,  0.697392,  0.347011,  0.085967, -1.393631, 
-              -0.000080, -0.000325, -0.348453,  0.000328,  0.000657,  0.000329,  0.000656,  51.276992,  0.000576, -0.000201, 
-              -0.000591,  0.000597,  0.000168, -0.000118 ]
+               0.000002,  0.000941, -0.285690,  0.695778, -0.391412, -0.000830, -0.000143,  0.000062, -0.283207,  0.695892, 
+              -0.394630,  0.000057, -0.000006, -0.000863, -0.000000,  0.000001,  0.000200, -0.000038,  0.698016, -0.348647, 
+              -0.087003, -1.395722,  0.000016,  0.000065, -0.348942,  0.000038,  0.698016,  0.348647,  0.087003, -1.395722, 
+              -0.000016, -0.000065, -0.348942,  0.000068,  0.000136,  0.000068,  0.000136,  66.091992,  0.000590, -0.000003, 
+               0.012296,  0.000585, -0.000051,  0.012296 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
@@ -176,29 +176,147 @@ items:
                 baseDirectory: "RTC directory"
         - 
           id: 9
-          name: "Floor"
+          name: "debris1"
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "/home/leus/choreonoid/share/model/misc/floor.body"
-            currentBaseLink: "Floor"
-            rootPosition: [ 0.5, 0, -0.1 ]
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/debris1.wrl"
+            currentBaseLink: "debris1"
+            rootPosition: [ -6.99999998, 3.00000001, -0.362100199 ]
             rootAttitude: [ 
-              -0.965925826, 9.07684883e-17, 0.258819045, 
-              1.18291797e-16, 1, 9.07684883e-17, 
-              -0.258819045, 1.18291797e-16, -0.965925826 ]
+              -3.75819376e-11, 1, -6.57434151e-08, 
+              -1, -3.75834919e-11, -2.18041043e-08, 
+              -2.18041043e-08, 6.57434151e-08, 1 ]
             jointPositions: [  ]
-            initialRootPosition: [ 0.5, 0, -0.1 ]
+            initialRootPosition: [ -6.99999998, 3.00000001, -0.362100199 ]
             initialRootAttitude: [ 
-              -0.965925826, 9.07684883e-17, 0.258819045, 
-              1.18291797e-16, 1, 9.07684883e-17, 
-              -0.258819045, 1.18291797e-16, -0.965925826 ]
+              -6.89699409e-11, 1, -6.49397223e-08, 
+              -1, -6.89712731e-11, -2.15073815e-08, 
+              -2.15073815e-08, 6.49397223e-08, 1 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
-            isEditable: false
+            isEditable: true
+        - 
+          id: 10
+          name: "debris2"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/debris2.wrl"
+            currentBaseLink: "debris2"
+            rootPosition: [ -10, 4, -0.362099931 ]
+            rootAttitude: [ 
+              -2.23276952e-11, 1, 8.0151968e-09, 
+              -1, -2.23276952e-11, 2.90642519e-09, 
+              2.90642519e-09, -8.0151968e-09, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -10, 4, 0.1 ]
+            initialRootAttitude: [ 
+              2.22044605e-16, 1, 0, 
+              -1, 2.22044605e-16, -0, 
+              -0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 11
+          name: "debris4"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/debris4.wrl"
+            currentBaseLink: "debris4"
+            rootPosition: [ -9.99999995, 3.50000029, -0.366097406 ]
+            rootAttitude: [ 
+              -1.90986009e-08, 1, 1.45608864e-07, 
+              -1, -1.90985798e-08, -1.44879385e-07, 
+              -1.44879382e-07, -1.45608867e-07, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -10, 3.5, 0 ]
+            initialRootAttitude: [ 
+              2.22044605e-16, 1, 0, 
+              -1, 2.22044605e-16, -0, 
+              -0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 12
+          name: "debris5"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/debris5.wrl"
+            currentBaseLink: "debris5"
+            rootPosition: [ -9.99996645, 3.49919435, -0.374656908 ]
+            rootAttitude: [ 
+              6.21447603e-05, 0.999999641, -0.000844712786, 
+              -0.999999998, 6.21196371e-05, -2.97679764e-05, 
+              -2.97154924e-05, 0.000844714634, 0.999999643 ]
+            jointPositions: [  0.000000 ]
+            initialRootPosition: [ -10, 3.5, 0 ]
+            initialRootAttitude: [ 
+              2.22044605e-16, 1, 0, 
+              -1, 2.22044605e-16, -0, 
+              -0, 0, 1 ]
+            initialJointPositions: [  0.000000 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 13
+          name: "debris3"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/debris3.wrl"
+            currentBaseLink: "debris3"
+            rootPosition: [ 9.55998624, -8.3195581, 0.901181214 ]
+            rootAttitude: [ 
+              -0.0237672305, -0.999683689, -0.00822438026, 
+              0.977661012, -0.0249606225, 0.208700534, 
+              -0.208839805, -0.00308042224, 0.977945012 ]
+            jointPositions: [  0.000000 ]
+            initialRootPosition: [ 9.42, -8.5, -0.33 ]
+            initialRootAttitude: [ 
+              2.22044605e-16, -1, 0, 
+              1, 2.22044605e-16, 0, 
+              0, 0, 1 ]
+            initialJointPositions: [  0.000000 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 14
+          name: "field"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/model/tasks/R4/field.wrl"
+            currentBaseLink: "root"
+            rootPosition: [ -10, 8.5, -0.35 ]
+            rootAttitude: [ 
+              2.22044605e-16, 1, 0, 
+              -1, 2.22044605e-16, -0, 
+              -0, 0, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -10, 8.5, -0.35 ]
+            initialRootAttitude: [ 
+              2.22044605e-16, 1, 0, 
+              -1, 2.22044605e-16, -0, 
+              -0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            staticModel: false
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
     - 
-      id: 10
+      id: 15
       name: "ros_service_server.py"
       plugin: Python
       class: PythonScriptItem
@@ -207,7 +325,7 @@ items:
         executionOnLoading: true
         backgroundExecution: false
     - 
-      id: 11
+      id: 16
       name: "external_force_sample.py"
       plugin: Python
       class: PythonScriptItem
@@ -215,29 +333,6 @@ items:
         file: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/scripts/external_force_sample.py"
         executionOnLoading: true
         backgroundExecution: true
-    - 
-      id: 12
-      name: "box1"
-      plugin: Body
-      class: BodyItem
-      data: 
-        modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
-        currentBaseLink: "body"
-        rootPosition: [ 0.234296296, 0.203954293, 0.0237865717 ]
-        rootAttitude: [ 
-          1, -2.68203825e-13, -1.27022134e-07, 
-          2.72191065e-13, 1, 3.13901208e-08, 
-          1.27022134e-07, -3.13901208e-08, 1 ]
-        jointPositions: [  ]
-        initialRootPosition: [ 0.234296298, 0.203954292, 0.00960990767 ]
-        initialRootAttitude: [ 
-          1, 0, 0, 
-          0, 1, 0, 
-          0, 0, 1 ]
-        zmp: [ 0, 0, 0 ]
-        collisionDetection: true
-        selfCollisionDetection: false
-        isEditable: true
 views: 
   - 
     id: 0
@@ -256,9 +351,9 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 1, 3 ]
-      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-      expanded: [ 1, 3, 8, 12 ]
+      selected: [ 14 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16 ]
+      expanded: [ 1, 3, 8, 9, 10, 11, 12, 13 ]
   - 
     id: 3
     plugin: Base
@@ -308,9 +403,9 @@ views:
           fieldOfView: 0.6978
           near: 0.01
           far: 100
-          eye: [ 0.906985922, -3.9006173, 0.986818071 ]
-          direction: [ 0.0699428234, 0.997550684, -0.000796361652 ]
-          up: [ 5.56998001e-05, 0.000794411363, 0.999999683 ]
+          eye: [ -3.25230399, 1.09162357, 2.34435326 ]
+          direction: [ 0.449309739, -0.76965661, -0.453596143 ]
+          up: [ 0.22868434, -0.39173069, 0.891207349 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -349,7 +444,7 @@ views:
       spinBox: true
       slider: true
       labelOnLeft: true
-      currentBodyItem: 9
+      currentBodyItem: 14
   - 
     id: 8
     plugin: Body
@@ -357,13 +452,10 @@ views:
     mounted: true
     state: 
       listingMode: "Link List"
-      currentBodyItem: 9
+      currentBodyItem: 14
       bodyItems: 
         - 
           id: 2
-          selectedLinks: [ 0 ]
-        - 
-          id: 12
           selectedLinks: [ 0 ]
   - 
     id: 9
@@ -377,11 +469,11 @@ views:
 toolbars: 
   "TimeBar": 
     minTime: 0
-    maxTime: 60
+    maxTime: 442.725
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 4.05
+    currentTime: 17.872
     speedScale: 1
     syncToOngoingUpdates: false
     autoExpansion: true
@@ -394,7 +486,7 @@ toolbars:
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
   "BodyBar": 
-    current: 9
+    current: 14
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
@@ -451,7 +543,27 @@ Body:
         showPpcom: false
         showZmp: false
       - 
+        bodyItem: 10
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 11
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
         bodyItem: 12
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 13
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 14
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
@@ -474,12 +586,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 123, 1791 ]
+      sizes: [ 294, 3495 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 491, 489 ]
+          sizes: [ 1030, 1030 ]
           children: 
             - 
               type: pane
@@ -488,16 +600,16 @@ viewAreas:
             - 
               type: pane
               views: [ 1, 8 ]
-              current: 8
+              current: 1
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 861, 119 ]
+          sizes: [ 1877, 183 ]
           children: 
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 0, 1785 ]
+              sizes: [ 0, 3489 ]
               children: 
                 - 
                   type: pane
@@ -518,4 +630,4 @@ layoutOfToolBars:
       - { name: "ScriptBar", x: 47, priority: 3 }
       - { name: "TimeBar", x: 47, priority: 1 }
       - { name: "SceneBar", x: 1455, priority: 2 }
-      - { name: "SimulationBar", x: 1757, priority: 4 }
+      - { name: "SimulationBar", x: 1464, priority: 0 }

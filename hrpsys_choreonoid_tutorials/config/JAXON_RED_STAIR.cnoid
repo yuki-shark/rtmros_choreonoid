@@ -1,0 +1,1230 @@
+items: 
+  id: 0
+  name: "Root"
+  plugin: Base
+  class: RootItem
+  children: 
+    - 
+      id: 1
+      name: "World"
+      plugin: Body
+      class: WorldItem
+      data: 
+        collisionDetection: false
+        collisionDetector: AISTCollisionDetector
+        materialTableFile: "${SHARE}/default/materials.yaml"
+      children: 
+        - 
+          id: 2
+          name: "floor"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/floor_color.body"
+            currentBaseLink: ""
+            rootPosition: [ 0, 0, -0.1 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0, 0, -0.1 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
+              0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 3
+          name: "AISTSimulator"
+          plugin: Body
+          class: AISTSimulatorItem
+          data: 
+            realtimeSync: true
+            recording: "full"
+            timeRangeMode: "Active control period"
+            timeLength: 12000
+            allLinkPositionOutputMode: false
+            deviceStateOutput: true
+            controllerThreads: true
+            recordCollisionData: false
+            controllerOptions: ""
+            dynamicsMode: "Forward dynamics"
+            integrationMode: "Runge Kutta"
+            gravity: [ 0, 0, -9.80665 ]
+            staticFriction: 1
+            dynamicFriction: 1
+            cullingThresh: 0.005
+            contactCullingDepth: 0.03
+            errorCriterion: 0.001
+            maxNumIterations: 1000
+            contactCorrectionDepth: 0.0001
+            contactCorrectionVelocityRatio: 1
+            kinematicWalking: false
+            2Dmode: false
+            oldAccelSensorMode: false
+          children: 
+            - 
+              id: 4
+              name: "GLVisionSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ JAXON_RED ]
+                targetSensors: [ HEAD_LEFT_CAMERA ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 5
+              name: "GLVisionSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ JAXON_RED ]
+                targetSensors: [ HEAD_RIGHT_CAMERA ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+            - 
+              id: 6
+              name: "GLVisionSimulator"
+              plugin: Body
+              class: GLVisionSimulatorItem
+              data: 
+                enabled: true
+                targetBodies: [ JAXON_RED ]
+                targetSensors: [ HEAD_RANGE ]
+                maxFrameRate: 1000
+                maxLatency: 1
+                recordVisionData: false
+                useThreadsForSensors: true
+                bestEffort: false
+                allSceneObjects: false
+                rangeSensorPrecisionRatio: 2
+                depthError: 0
+                enableHeadLight: true
+                enableAdditionalLights: true
+        - 
+          id: 7
+          name: "JAXON_RED"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/JAXON_JVRC/JAXON_JVRCmain_hrpsys_bush.wrl"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.155903761, -0.000247540948, 1.35408805 ]
+            rootAttitude: [ 
+              0.999987424, -0.00029241713, 0.00500653386, 
+              0.000293987329, 0.999999908, -0.000312896738, 
+              -0.0050064419, 0.00031436466, 0.999987418 ]
+            jointPositions: [ 
+               0.000071,  0.000706, -0.247038,  0.687743, -0.441014, -0.001302, -0.000567, -0.000327, -0.243688,  0.685829, 
+              -0.442552,  0.000256, -0.000013, -0.000795,  0.000002, -0.000001,  0.000637,  0.000027,  0.697610, -0.347853, 
+              -0.086493, -1.394709,  0.000047,  0.000192, -0.348702, -0.000026,  0.697612,  0.347848,  0.086490, -1.394711, 
+              -0.000048, -0.000193, -0.348702,  0.000193,  0.000386,  0.000192,  0.000384,  161.138228,  0.000578, -0.000263, 
+              -0.004811,  0.000596,  0.000830, -0.004846 ]
+            initialRootPosition: [ -0.152399528, -5.88028624e-05, 1.354714 ]
+            initialRootAttitude: [ 
+              0.999931962, -0.000296570073, 0.0116612093, 
+              0.000296794329, 0.999999956, -1.75004326e-05, 
+              -0.0116612036, 2.09602227e-05, 0.999932006 ]
+            initialJointPositions: [ 
+               0.000014,  0.000867, -0.246385,  0.680719, -0.442553, -0.001533, -0.000483, -0.000198, -0.243121,  0.678890, 
+              -0.444071,  0.000125, -0.000006, -0.000801, -0.000000, -0.000000,  0.000213,  0.000013,  0.697953, -0.348662, 
+              -0.087008, -1.395745,  0.000016,  0.000064, -0.348945, -0.000013,  0.697954,  0.348662,  0.087008, -1.395745, 
+              -0.000016, -0.000064, -0.348945,  0.000064,  0.000128,  0.000064,  0.000128,  152.880480,  0.000587,  0.000039, 
+              -0.003756,  0.000587, -0.000018, -0.003752 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+          children: 
+            - 
+              id: 8
+              name: "BodyRTC"
+              plugin: OpenRTM
+              class: BodyRTCItem
+              data: 
+                isNoDelayMode: true
+                controllerOptions: ""
+                moduleName: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/PDcontroller"
+                confFileName: "${PROJECT_DIR}/SensorReaderRTC_JAXON_RED.PD.conf"
+                configurationMode: "Use Configuration File"
+                AutoConnect: false
+                InstanceName: "JAXON_RED(Robot)0"
+                bodyPeriodicRate: 0.002
+                baseDirectory: "RTC directory"
+        - 
+          id: 9
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box_8s.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.595001373, 1.30467399e-08, 0.149901779 ]
+            rootAttitude: [ 
+              -4.91050205e-08, -1, -9.28282963e-06, 
+              1, -4.91052516e-08, 2.48783947e-08, 
+              -2.48788504e-08, -9.28282963e-06, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.5950011, 1.08286956e-08, 0.149901428 ]
+            initialRootAttitude: [ 
+              -3.98864886e-08, -1, -7.43963471e-06, 
+              1, -3.98866502e-08, 2.17260348e-08, 
+              -2.17263314e-08, -7.43963471e-06, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 10
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box_4s.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.975000772, 6.71312451e-09, 0.0749019961 ]
+            rootAttitude: [ 
+              -2.70458822e-08, -1, -1.04501571e-05, 
+              1, -2.70461038e-08, 2.12094369e-08, 
+              -2.12097194e-08, -1.04501571e-05, 1 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.975000628, 5.62084219e-09, 0.0749016247 ]
+            initialRootAttitude: [ 
+              -2.21418281e-08, -1, -8.4974062e-06, 
+              1, -2.21419894e-08, 1.89697335e-08, 
+              -1.89699215e-08, -8.4974062e-06, 1 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 11
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box_8s2.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.254912507, 4.80923045e-07, 0.190155638 ]
+            rootAttitude: [ 
+              7.31531753e-07, 2.36596606e-05, 0.999999999, 
+              1, 5.35076783e-06, -7.31314447e-07, 
+              -5.35044124e-06, 0.999999999, -2.36593128e-05 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.254909634, 7.34504295e-07, 0.190157557 ]
+            initialRootAttitude: [ 
+              6.1935862e-07, 3.5782644e-05, 0.999999999, 
+              1, 5.58518275e-06, -6.19214319e-07, 
+              -5.58486076e-06, 0.999999999, -3.57822964e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+    - 
+      id: 12
+      name: "ros_service_server.py"
+      plugin: Python
+      class: PythonScriptItem
+      data: 
+        file: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/scripts/ros_service_server.py"
+        executionOnLoading: true
+        backgroundExecution: false
+    - 
+      id: 13
+      name: "external_force_sample.py"
+      plugin: Python
+      class: PythonScriptItem
+      data: 
+        file: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/hrpsys_choreonoid/scripts/external_force_sample.py"
+        executionOnLoading: true
+        backgroundExecution: true
+    - 
+      id: 14
+      name: "Floor"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/floor.body"
+        currentBaseLink: "Floor"
+        rootPosition: [ 0.08, 0, -0.1 ]
+        rootAttitude: [ 
+          -0.984807753, 0, 0.173648178, 
+          0, 1, 0, 
+          -0.173648178, 0, -0.984807753 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0.08, 0, -0.1 ]
+        initialRootAttitude: [ 
+          -0.984807753, 0, 0.173648178, 
+          0, 1, 0, 
+          -0.173648178, 0, -0.984807753 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: false
+    - 
+      id: 15
+      name: "box1"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
+        currentBaseLink: "body"
+        rootPosition: [ 0.565000179, 0.0999999924, 0.0749002434 ]
+        rootAttitude: [ 
+          1, -3.68841809e-08, 8.90258866e-07, 
+          3.6884045e-08, 1, 1.52650025e-07, 
+          -8.90258872e-07, -1.52649992e-07, 1 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0.565, 0.1, 0.2249 ]
+        initialRootAttitude: [ 
+          1, 6.66447597e-11, -1.76133688e-07, 
+          -6.66385291e-11, 1, 3.53741575e-08, 
+          1.76133688e-07, -3.53741574e-08, 1 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+    - 
+      id: 16
+      name: "box1"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/box18.body"
+        currentBaseLink: "body"
+        rootPosition: [ 0.900001254, -2.66792267e-06, 0.0149727164 ]
+        rootAttitude: [ 
+          0.999999997, -3.43755582e-07, 7.41732457e-05, 
+          3.54320998e-07, 0.99999999, -0.000142442448, 
+          -7.4173196e-05, 0.000142442474, 0.999999987 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0.9, 0, 0.05 ]
+        initialRootAttitude: [ 
+          1, 0, 0, 
+          0, 1, 0, 
+          0, 0, 1 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+    - 
+      id: 17
+      name: "red_box"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+        currentBaseLink: "WAIST"
+        rootPosition: [ -0.50004018, 0.195118601, 0.0749963033 ]
+        rootAttitude: [ 
+          -8.74623956e-07, -0.99999986, -0.000530313301, 
+          0.999999974, -9.96913418e-07, 0.000230598299, 
+          -0.000230598795, -0.000530313085, 0.999999833 ]
+        jointPositions: [  ]
+        initialRootPosition: [ -0.500039694, 0.195118427, 0.074996191 ]
+        initialRootAttitude: [ 
+          -8.72709931e-07, -0.999999863, -0.000523872054, 
+          0.999999974, -9.92375902e-07, 0.000228425732, 
+          -0.00022842622, -0.000523871841, 0.999999837 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 18
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.690184812, -0.195033529, 0.224984828 ]
+            rootAttitude: [ 
+              -2.50643208e-06, -0.999999997, -7.53211005e-05, 
+              0.999999895, -2.54086469e-06, 0.000457147599, 
+              -0.000457147789, -7.53199467e-05, 0.999999893 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.690185028, -0.19503528, 0.224981414 ]
+            initialRootAttitude: [ 
+              -2.62121932e-06, -0.999999995, -9.63633361e-05, 
+              0.999999901, -2.66405105e-06, 0.000444484128, 
+              -0.000444484383, -9.63621613e-05, 0.999999897 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 19
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.69019261, 0.195176629, 0.224978874 ]
+            rootAttitude: [ 
+              -4.14705696e-06, -0.999999979, -0.000205776624, 
+              0.999999873, -4.25115955e-06, 0.000505903113, 
+              -0.000505903977, -0.0002057745, 0.999999851 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.690192479, 0.195176382, 0.224978552 ]
+            initialRootAttitude: [ 
+              -4.13906724e-06, -0.999999979, -0.000207358276, 
+              0.999999873, -4.2437548e-06, 0.000504865276, 
+              -0.000504866145, -0.00020735616, 0.999999851 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 20
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.690139951, -0.195083446, 0.0749909833 ]
+            rootAttitude: [ 
+              -1.0407594e-06, -0.999999861, -0.000526324678, 
+              0.999999978, -1.15092541e-06, 0.000209311622, 
+              -0.000209312199, -0.000526324448, 0.99999984 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.690139276, -0.195083849, 0.0749891624 ]
+            initialRootAttitude: [ 
+              -1.07157272e-06, -0.999999866, -0.000517389246, 
+              0.999999979, -1.17717979e-06, 0.000204115052, 
+              -0.000204115634, -0.000517389016, 0.999999845 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 21
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.690138826, 0.195119927, 0.0749989993 ]
+            rootAttitude: [ 
+              -1.85441248e-06, -0.999999867, -0.000515269968, 
+              0.999999968, -1.98424251e-06, 0.000251964662, 
+              -0.000251965651, -0.000515269484, 0.999999836 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.690138707, 0.195119837, 0.0749989824 ]
+            initialRootAttitude: [ 
+              -1.84827717e-06, -0.999999868, -0.000513670378, 
+              0.999999969, -1.97715613e-06, 0.000250897785, 
+              -0.000250898768, -0.000513669898, 0.999999837 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 22
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.500093546, -0.195026328, 0.22497866 ]
+            rootAttitude: [ 
+              -4.26261185e-06, -0.99999998, -0.000201272943, 
+              0.999999879, -4.36169037e-06, 0.000492261619, 
+              -0.000492262487, -0.000201270821, 0.999999859 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.500092702, -0.19502684, 0.224978485 ]
+            initialRootAttitude: [ 
+              -4.23047609e-06, -0.999999981, -0.000198190145, 
+              0.99999988, -4.32754055e-06, 0.000489756356, 
+              -0.000489757204, -0.000198188049, 0.99999986 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 23
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.500109832, 0.195184816, 0.22499265 ]
+            rootAttitude: [ 
+              -2.31496656e-06, -0.999999919, -0.000402582452, 
+              0.999999786, -2.57830775e-06, 0.00065413053, 
+              -0.000654131515, -0.000402580852, 0.999999705 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.500108188, 0.195183336, 0.2249927 ]
+            initialRootAttitude: [ 
+              -2.32036331e-06, -0.999999923, -0.000393551304, 
+              0.999999796, -2.5718047e-06, 0.0006389044, 
+              -0.000638905362, -0.000393549741, 0.999999718 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 24
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.500039439, -0.195081017, 0.0749974374 ]
+            rootAttitude: [ 
+              -1.95746687e-06, -0.999999863, -0.000523706254, 
+              0.999999971, -2.08258944e-06, 0.000238917023, 
+              -0.000238918081, -0.000523705771, 0.999999834 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.500039135, -0.195081185, 0.0749972775 ]
+            initialRootAttitude: [ 
+              -1.93698765e-06, -0.999999865, -0.00051959095, 
+              0.999999972, -2.06003824e-06, 0.000236821612, 
+              -0.000236822651, -0.000519590477, 0.999999837 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+    - 
+      id: 25
+      name: "red_box"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+        currentBaseLink: "WAIST"
+        rootPosition: [ -0.880220735, 0.195102275, 0.074932213 ]
+        rootAttitude: [ 
+          -2.91227487e-07, -0.999999962, -0.000277537517, 
+          1, -2.99551232e-07, 2.9991381e-05, 
+          -2.9991463e-05, -0.000277537508, 0.999999961 ]
+        jointPositions: [  ]
+        initialRootPosition: [ -0.880220535, 0.195102269, 0.0749319444 ]
+        initialRootAttitude: [ 
+          -2.88023869e-07, -0.999999962, -0.000274863924, 
+          1, -2.96246637e-07, 2.99157373e-05, 
+          -2.99158176e-05, -0.000274863915, 0.999999962 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 26
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.880220734, -0.195097725, 0.0749322122 ]
+            rootAttitude: [ 
+              -2.91205361e-07, -0.999999962, -0.000277529317, 
+              1, -2.99528866e-07, 2.99914019e-05, 
+              -2.99914839e-05, -0.000277529308, 0.999999961 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.880220534, -0.195097731, 0.0749319436 ]
+            initialRootAttitude: [ 
+              -2.88000615e-07, -0.999999962, -0.000274855723, 
+              1, -2.96223143e-07, 2.99157585e-05, 
+              -2.99158388e-05, -0.000274855715, 0.999999962 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 27
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -1.07032073, 0.195102275, 0.0749322122 ]
+            rootAttitude: [ 
+              -2.91204486e-07, -0.999999962, -0.000277528902, 
+              1, -2.99527997e-07, 2.99914702e-05, 
+              -2.99915521e-05, -0.000277528893, 0.999999961 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -1.07032053, 0.195102269, 0.0749319436 ]
+            initialRootAttitude: [ 
+              -2.87999692e-07, -0.999999962, -0.000274855314, 
+              1, -2.96222226e-07, 2.99158253e-05, 
+              -2.99159056e-05, -0.000274855306, 0.999999962 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 28
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -1.07032073, -0.195097727, 0.0749322003 ]
+            rootAttitude: [ 
+              -2.91099135e-07, -0.999999962, -0.000277460144, 
+              1, -2.99413028e-07, 2.99642355e-05, 
+              -2.99643174e-05, -0.000277460135, 0.999999961 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -1.07032053, -0.195097733, 0.0749319317 ]
+            initialRootAttitude: [ 
+              -2.87884412e-07, -0.999999962, -0.000274786555, 
+              1, -2.96097406e-07, 2.98885904e-05, 
+              -2.98886706e-05, -0.000274786547, 0.999999962 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+    - 
+      id: 29
+      name: "red_box"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+        currentBaseLink: "WAIST"
+        rootPosition: [ -0.179825603, 0.195095916, 0.0949176273 ]
+        rootAttitude: [ 
+          -2.15872408e-07, -0.000188463437, -0.999999982, 
+          -0.999999999, -4.77619485e-05, 2.24765235e-07, 
+          -4.77618814e-05, 0.999999981, -0.000188463535 ]
+        jointPositions: [  ]
+        initialRootPosition: [ -0.179817307, 0.195097706, 0.0948191515 ]
+        initialRootAttitude: [ 
+          -8.88527159e-08, -0.000102478246, -0.999999995, 
+          -1, -2.90870679e-05, 9.1719416e-08, 
+          -2.9086963e-05, 0.999999994, -0.000102478357 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+      children: 
+        - 
+          id: 30
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.329902488, -0.195104824, 0.0949070482 ]
+            rootAttitude: [ 
+              1.9284192e-06, 2.96433524e-05, -1, 
+              -0.999999999, -5.11861633e-05, -1.93035713e-06, 
+              -5.11857999e-05, 0.999999999, 2.9642833e-05 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.32990261, -0.195102793, 0.0948196801 ]
+            initialRootAttitude: [ 
+              7.46833117e-07, 1.11416224e-05, -1, 
+              -1, -2.8780308e-05, -7.47497145e-07, 
+              -2.8779973e-05, 1, 1.11412576e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 31
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.32991236, 0.195094123, 0.0949115798 ]
+            rootAttitude: [ 
+              -6.39389506e-07, -9.71842475e-05, -0.999999996, 
+              -0.999999999, -5.31394118e-05, 6.44282697e-07, 
+              -5.31392031e-05, 0.999999994, -9.71844845e-05 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.329908972, 0.195096914, 0.0948222769 ]
+            initialRootAttitude: [ 
+              -6.06118882e-07, -5.56062194e-05, -0.999999999, 
+              -1, -2.7586678e-05, 6.07371745e-07, 
+              -2.75864306e-05, 0.999999998, -5.56064838e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 32
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.179805628, -0.195106732, 0.0949083526 ]
+            rootAttitude: [ 
+              -2.37569339e-07, 1.9445817e-06, -1, 
+              -0.999999997, -6.58006851e-05, 2.37792106e-07, 
+              -6.58010354e-05, 0.999999997, 1.94494808e-06 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.179806658, -0.195104, 0.0948146131 ]
+            initialRootAttitude: [ 
+              -2.5744756e-07, -9.92559361e-08, -1, 
+              -0.999999999, -3.84679223e-05, 2.57669105e-07, 
+              -3.84681401e-05, 0.999999999, -9.90282971e-08 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 33
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.329895667, -0.195123856, 0.284830977 ]
+            rootAttitude: [ 
+              4.8160263e-06, 7.51247333e-05, -0.999999997, 
+              -0.999999989, -0.000149979806, -4.82735187e-06, 
+              -0.00014998011, 0.999999986, 7.51239517e-05 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.329901791, -0.19511353, 0.284748189 ]
+            initialRootAttitude: [ 
+              1.55737159e-06, 1.11051628e-05, -1, 
+              -0.999999997, -8.38841194e-05, -1.55835828e-06, 
+              -8.38840815e-05, 0.999999996, 1.1104977e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 34
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.329931747, 0.195077631, 0.284827045 ]
+            rootAttitude: [ 
+              -2.65433255e-06, -0.000112794058, -0.999999994, 
+              -0.999999993, -0.000119000658, 2.66774796e-06, 
+              -0.000119000951, 0.999999987, -0.000112793749 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.329919725, 0.195087835, 0.284749372 ]
+            initialRootAttitude: [ 
+              -2.19730028e-06, -5.58831453e-05, -0.999999998, 
+              -0.999999998, -6.9189827e-05, 2.20118633e-06, 
+              -6.91899694e-05, 0.999999996, -5.58829737e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 35
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.179810118, -0.195120679, 0.284817901 ]
+            rootAttitude: [ 
+              -4.64499805e-07, -4.93957685e-05, -0.999999999, 
+              -0.999999997, -8.01251871e-05, 4.68295816e-07, 
+              -8.01250483e-05, 0.999999996, -4.9395893e-05 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.179812748, -0.195113157, 0.284742635 ]
+            initialRootAttitude: [ 
+              -5.04122144e-07, -5.52466309e-05, -0.999999999, 
+              -0.999999999, -5.74357202e-05, 5.06916972e-07, 
+              -5.74353698e-05, 0.999999997, -5.52469801e-05 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+        - 
+          id: 36
+          name: "red_box"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/flat_box.body"
+            currentBaseLink: "WAIST"
+            rootPosition: [ -0.179871641, 0.195082579, 0.284835994 ]
+            rootAttitude: [ 
+              -6.81826925e-07, -0.000284320064, -0.99999996, 
+              -0.999999996, -9.28186713e-05, 7.07981707e-07, 
+              -9.28186334e-05, 0.999999956, -0.000284320235 ]
+            jointPositions: [  ]
+            initialRootPosition: [ -0.17984715, 0.195088264, 0.284753391 ]
+            initialRootAttitude: [ 
+              -2.1953099e-07, -0.000199404526, -0.99999998, 
+              -0.999999998, -6.99974855e-05, 2.33264271e-07, 
+              -6.99973061e-05, 0.999999978, -0.000199404735 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
+    - 
+      id: 37
+      name: "box1"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/box20.body"
+        currentBaseLink: "body"
+        rootPosition: [ -0.254991284, -2.58711124e-05, 0.38228061 ]
+        rootAttitude: [ 
+          0.999999989, -7.02483178e-05, -0.000127799395, 
+          7.02535561e-05, 0.999999997, 4.09840348e-05, 
+          0.000127796516, -4.09930127e-05, 0.999999991 ]
+        jointPositions: [  ]
+        initialRootPosition: [ -0.254999974, -9.93177859e-06, 0.382188211 ]
+        initialRootAttitude: [ 
+          0.999999982, -2.69183662e-05, -0.00018964653, 
+          2.69161043e-05, 1, -1.1929409e-05, 
+          0.000189646851, 1.19243043e-05, 0.999999982 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+views: 
+  - 
+    id: 0
+    name: "CameraImage"
+    plugin: Base
+    class: ImageView
+    mounted: true
+  - 
+    id: 1
+    plugin: Base
+    class: ItemPropertyView
+    mounted: true
+  - 
+    id: 2
+    plugin: Base
+    class: ItemTreeView
+    mounted: true
+    state: 
+      selected: [ 1, 3 ]
+      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 36 ]
+      expanded: [ 3, 8, 9, 10, 11, 15 ]
+  - 
+    id: 3
+    plugin: Base
+    class: MessageView
+    mounted: true
+  - 
+    id: 4
+    plugin: Base
+    class: SceneView
+    mounted: true
+    state: 
+      editMode: false
+      viewpointControlMode: thirdPerson
+      collisionLines: false
+      polygonMode: fill
+      defaultHeadLight: true
+      defaultHeadLightIntensity: 0.75
+      headLightLightingFromBack: false
+      worldLight: true
+      worldLightIntensity: 0.5
+      worldLightAmbient: 0.3
+      additionalLights: false
+      fog: true
+      floorGrid: true
+      floorGridSpan: 10
+      floorGridInterval: 0.5
+      xzGridSpan: 10
+      xzGridInterval: 0.5
+      xzGrid: false
+      yzGridSpan: 10
+      yzGridInterval: 0.5
+      texture: true
+      lineWidth: 1
+      pointSize: 1
+      normalVisualization: false
+      normalLength: 0.01
+      coordinateAxes: true
+      fpsTestIteration: 1
+      showFPS: false
+      enableNewDisplayListDoubleRendering: false
+      useBufferForPicking: true
+      upsideDown: false
+      cameras: 
+        - 
+          camera: [ System, Perspective ]
+          isCurrent: true
+          fieldOfView: 0.6978
+          near: 0.01
+          far: 100
+          eye: [ -0.606397687, -3.16575265, 0.795183002 ]
+          direction: [ 0.110435995, 0.992665526, 0.0491837861 ]
+          up: [ -0.00543824201, -0.0488822088, 0.998789745 ]
+        - 
+          camera: [ System, Orthographic ]
+          orthoHeight: 20
+          near: 0.01
+          far: 100
+      backgroundColor: [ 0.53725493, 0.815686285, 1 ]
+      gridColor: [ 0, 0, 0, 1 ]
+      xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
+      dedicatedItemTreeViewChecks: false
+  - 
+    id: 5
+    name: "Task"
+    plugin: Base
+    class: TaskView
+    state: 
+      layoutMode: horizontal
+      isAutoMode: false
+  - 
+    id: 6
+    plugin: Body
+    class: BodyLinkView
+    mounted: true
+    state: 
+      showRotationMatrix: false
+  - 
+    id: 7
+    plugin: Body
+    class: JointSliderView
+    mounted: true
+    state: 
+      showAllJoints: true
+      jointId: false
+      name: true
+      numColumns: 1
+      spinBox: true
+      slider: true
+      labelOnLeft: true
+      currentBodyItem: 9
+  - 
+    id: 8
+    plugin: Body
+    class: LinkSelectionView
+    mounted: true
+    state: 
+      listingMode: "Link List"
+      currentBodyItem: 9
+      bodyItems: 
+        - 
+          id: 2
+          selectedLinks: [ 0 ]
+        - 
+          id: 11
+          selectedLinks: [ 0 ]
+        - 
+          id: 9
+          selectedLinks: [ 0 ]
+        - 
+          id: 15
+          selectedLinks: [ 0 ]
+  - 
+    id: 9
+    plugin: OpenRTM
+    class: RTSNameServerView
+  - 
+    id: 10
+    plugin: Python
+    class: PythonConsoleView
+    mounted: true
+toolbars: 
+  "TimeBar": 
+    minTime: 0
+    maxTime: 62.83
+    frameRate: 1000
+    playbackFrameRate: 50
+    idleLoopDrivenMode: false
+    currentTime: 8.393
+    speedScale: 1
+    syncToOngoingUpdates: false
+    autoExpansion: true
+  "KinematicsBar": 
+    mode: AUTO
+    enablePositionDragger: true
+    penetrationBlock: false
+    collisionLinkHighlight: false
+    snapDistance: 0.025
+    penetrationBlockDepth: 0.0005
+    lazyCollisionDetectionMode: true
+  "BodyBar": 
+    current: 9
+  "LeggedBodyBar": 
+    stanceWidth: 0.15
+  "BodyMotionGenerationBar": 
+    autoGenerationForNewBody: true
+    balancer: false
+    autoGeneration: false
+    timeScaleRatio: 1
+    preInitialDuration: 1
+    postFinalDuration: 1
+    onlyTimeBarRange: false
+    makeNewBodyItem: true
+    stealthyStepMode: true
+    stealthyHeightRatioThresh: 2
+    flatLiftingHeight: 0.005
+    flatLandingHeight: 0.005
+    impactReductionHeight: 0.005
+    impactReductionTime: 0.04
+    autoZmp: true
+    minZmpTransitionTime: 0.1
+    zmpCenteringTimeThresh: 0.03
+    zmpTimeMarginBeforeLiftingSpin: 0
+    zmpMaxDistanceFromCenter: 0.02
+    allLinkPositions: false
+    lipSyncMix: false
+    timeToStartBalancer: 0
+    balancerIterations: 2
+    plainBalancerMode: false
+    boundaryConditionType: position
+    boundarySmootherType: quintic
+    boundarySmootherTime: 0.5
+    boundaryCmAdjustment: false
+    boundaryCmAdjustmentTime: 1
+    waistHeightRelaxation: false
+    gravity: 9.8
+    dynamicsTimeRatio: 1
+Body: 
+  "BodyMotionEngine": 
+    updateJointVelocities: false
+  "EditableSceneBody": 
+    editableSceneBodies: 
+      - 
+        bodyItem: 2
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 7
+        showCenterOfMass: false
+        showPpcom: true
+        showZmp: false
+      - 
+        bodyItem: 9
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 10
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 11
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 14
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 15
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 16
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 17
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 18
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 19
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 20
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 21
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 22
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 23
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 24
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 25
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 26
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 27
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 28
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 29
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 30
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 31
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 32
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 33
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 34
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 35
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 36
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 37
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+    staticModelEditing: false
+  "KinematicFaultChecker": 
+    checkJointPositions: true
+    angleMargin: 0
+    translationMargin: 0
+    checkJointVelocities: true
+    velocityLimitRatio: 100
+    targetJoints: all
+    checkSelfCollisions: true
+    onlyTimeBarRange: false
+OpenRTM: 
+  "deleteUnmanagedRTCsOnStartingSimulation": false
+viewAreas: 
+  - 
+    type: embedded
+    tabs: true
+    contents: 
+      type: splitter
+      orientation: horizontal
+      sizes: [ 366, 3423 ]
+      children: 
+        - 
+          type: splitter
+          orientation: vertical
+          sizes: [ 1030, 1030 ]
+          children: 
+            - 
+              type: pane
+              views: [ 2 ]
+              current: 2
+            - 
+              type: pane
+              views: [ 1, 8 ]
+              current: 8
+        - 
+          type: splitter
+          orientation: vertical
+          sizes: [ 1810, 250 ]
+          children: 
+            - 
+              type: splitter
+              orientation: horizontal
+              sizes: [ 0, 3417 ]
+              children: 
+                - 
+                  type: pane
+                  views: [ 6, 7, 0 ]
+                  current: 6
+                - 
+                  type: pane
+                  views: [ 4 ]
+                  current: 4
+            - 
+              type: pane
+              views: [ 3, 10 ]
+              current: 10
+layoutOfToolBars: 
+  rows: 
+    - 
+      - { name: "FileBar", x: 0, priority: 0 }
+      - { name: "ScriptBar", x: 47, priority: 3 }
+      - { name: "TimeBar", x: 47, priority: 1 }
+      - { name: "SceneBar", x: 1455, priority: 2 }
+      - { name: "SimulationBar", x: 1464, priority: 0 }

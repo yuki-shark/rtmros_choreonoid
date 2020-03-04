@@ -132,28 +132,28 @@ items:
           data: 
             modelFile: "/home/leus/catkin_ws/ws_walk/src/rtm-ros-robotics/rtmros_choreonoid/jvrc_models/JAXON_JVRC/JAXON_JVRCmain_hrpsys_bush.wrl"
             currentBaseLink: "WAIST"
-            rootPosition: [ -0.00714980308, 0.072541742, 0.973681411 ]
+            rootPosition: [ 0.0672083262, -0.00732395902, 0.978351917 ]
             rootAttitude: [ 
-              0.999739539, -2.31003527e-05, -0.0228222059, 
-              1.92701442e-05, 0.999999986, -0.000168048056, 
-              0.0228222095, 0.000167564499, 0.999739525 ]
+              0.991097356, 0.131334435, -0.0218471342, 
+              -0.131177944, 0.991322788, 0.0084544196, 
+              0.0227679184, -0.00551329077, 0.999725575 ]
             jointPositions: [ 
-              -0.000004,  0.000829, -0.243420,  0.697529, -0.431626, -0.001450, -0.000107, -0.000102, -0.240405,  0.696287, 
-              -0.433235,  0.000066, -0.000035, -0.001658,  0.000001,  0.000001,  0.001241, -0.000079,  0.697254, -0.346602, 
-              -0.085710, -1.393100,  0.000096,  0.000389, -0.348330,  0.000080,  0.697253,  0.346597,  0.085706, -1.393102, 
-              -0.000096, -0.000390, -0.348330,  0.000395,  0.000790,  0.000395,  0.000787,  55.317740,  0.000578, -0.000426, 
-              -0.000194,  0.000597,  0.000218,  0.000228 ]
-            initialRootPosition: [ -0.00520540784, 0.0726246499, 0.973959451 ]
+               0.130249,  0.025532, -0.238073,  0.660327, -0.400267, -0.017738,  0.130517,  0.016563, -0.202093,  0.653340, 
+              -0.428478, -0.007485, -0.000073, -0.000696, -0.000831, -0.000014,  0.523939,  0.263452,  0.665184, -0.449619, 
+              -0.271123, -1.665654, -0.643752, -0.099069, -0.508557, -0.000118,  0.697789,  0.348605,  0.086971, -1.395832, 
+              -0.000019, -0.000067, -0.348966, -1.396106,  1.395996, -0.294962,  0.216217,  456.244488,  0.000582, -0.000731, 
+              -0.000759,  0.000597, -0.000027, -0.000411 ]
+            initialRootPosition: [ -0.00671590152, -0.00799660612, 0.988368632 ]
             initialRootAttitude: [ 
-              0.99983652, -4.49058374e-06, -0.0180812849, 
-              2.86360848e-06, 0.999999996, -9.00070649e-05, 
-              0.0180812852, 8.99405729e-05, 0.999836516 ]
+              0.99148657, 0.128494313, -0.021061653, 
+              -0.128260451, 0.991666609, 0.012107536, 
+              0.0224418875, -0.00930308222, 0.999704864 ]
             initialJointPositions: [ 
-              -0.000002,  0.000824, -0.244800,  0.694460, -0.431650, -0.001458, -0.000090, -0.000117, -0.241829,  0.693298, 
-              -0.433244,  0.000086, -0.000033, -0.000826,  0.000000,  0.000001,  0.001034, -0.000061,  0.697393, -0.347012, 
-              -0.085968, -1.393631,  0.000080,  0.000325, -0.348453,  0.000061,  0.697392,  0.347011,  0.085967, -1.393631, 
-              -0.000080, -0.000325, -0.348453,  0.000328,  0.000657,  0.000329,  0.000656,  51.276992,  0.000576, -0.000201, 
-              -0.000591,  0.000597,  0.000168, -0.000118 ]
+               0.128514,  0.024027, -0.243378,  0.659502, -0.395165, -0.012803,  0.128204,  0.025225, -0.203186,  0.655631, 
+              -0.431708, -0.013542, -0.000358, -0.000709, -0.000814, -0.000010,  0.523942,  0.263499,  0.665283, -0.449913, 
+              -0.268119, -1.662031, -0.545490, -0.101024, -0.518006, -0.000124,  0.697782,  0.348608,  0.086971, -1.395822, 
+              -0.000019, -0.000068, -0.348964, -1.396107,  1.395995, -1.396279,  1.396315,  228.175740,  0.000588,  0.000006, 
+               0.000103,  0.000586,  0.000029,  0.000031 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
@@ -176,29 +176,52 @@ items:
                 baseDirectory: "RTC directory"
         - 
           id: 9
-          name: "Floor"
+          name: "box1"
           plugin: Body
           class: BodyItem
           data: 
-            modelFile: "/home/leus/choreonoid/share/model/misc/floor.body"
-            currentBaseLink: "Floor"
-            rootPosition: [ 0.5, 0, -0.1 ]
+            modelFile: "/home/leus/choreonoid/share/model/misc/cup1.body"
+            currentBaseLink: "body"
+            rootPosition: [ 0.447824532, -0.471386596, 1.0914942 ]
             rootAttitude: [ 
-              -0.965925826, 9.07684883e-17, 0.258819045, 
-              1.18291797e-16, 1, 9.07684883e-17, 
-              -0.258819045, 1.18291797e-16, -0.965925826 ]
+              0.695023582, -0.118396185, -0.709171744, 
+              -0.713588388, 0.00705353174, -0.7005297, 
+              0.0879422096, 0.992941383, -0.0795837722 ]
             jointPositions: [  ]
-            initialRootPosition: [ 0.5, 0, -0.1 ]
+            initialRootPosition: [ 0.5, 0, 0.05 ]
             initialRootAttitude: [ 
-              -0.965925826, 9.07684883e-17, 0.258819045, 
-              1.18291797e-16, 1, 9.07684883e-17, 
-              -0.258819045, 1.18291797e-16, -0.965925826 ]
+              1, 0, 0, 
+              0, 2.22044605e-16, -1, 
+              0, 1, 2.22044605e-16 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
-            isEditable: false
+            isEditable: true
+        - 
+          id: 10
+          name: "box1"
+          plugin: Body
+          class: BodyItem
+          data: 
+            modelFile: "/home/leus/choreonoid/share/model/misc/cup2.body"
+            currentBaseLink: ""
+            rootPosition: [ 0.437115574, -0.479117575, 1.19167172 ]
+            rootAttitude: [ 
+              0.184557266, -0.114053487, -0.976181549, 
+              -0.982747725, -0.00922446412, -0.184720918, 
+              0.0120633132, 0.993431785, -0.113788247 ]
+            jointPositions: [  ]
+            initialRootPosition: [ 0.5, 0, 0.15 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 2.22044605e-16, -1, 
+              0, 1, 2.22044605e-16 ]
+            zmp: [ 0, 0, 0 ]
+            collisionDetection: true
+            selfCollisionDetection: false
+            isEditable: true
     - 
-      id: 10
+      id: 11
       name: "ros_service_server.py"
       plugin: Python
       class: PythonScriptItem
@@ -207,7 +230,7 @@ items:
         executionOnLoading: true
         backgroundExecution: false
     - 
-      id: 11
+      id: 12
       name: "external_force_sample.py"
       plugin: Python
       class: PythonScriptItem
@@ -216,20 +239,66 @@ items:
         executionOnLoading: true
         backgroundExecution: true
     - 
-      id: 12
+      id: 13
+      name: "Floor"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/floor.body"
+        currentBaseLink: "Floor"
+        rootPosition: [ 0.08, 0, -0.1 ]
+        rootAttitude: [ 
+          -0.984807753, 0, 0.173648178, 
+          0, 1, 0, 
+          -0.173648178, 0, -0.984807753 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0.08, 0, -0.1 ]
+        initialRootAttitude: [ 
+          -0.984807753, 0, 0.173648178, 
+          0, 1, 0, 
+          -0.173648178, 0, -0.984807753 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: false
+    - 
+      id: 14
       name: "box1"
       plugin: Body
       class: BodyItem
       data: 
         modelFile: "/home/leus/choreonoid/share/model/misc/box11.body"
         currentBaseLink: "body"
-        rootPosition: [ 0.234296296, 0.203954293, 0.0237865717 ]
+        rootPosition: [ 0.565000179, 0.0999999924, 0.0749002434 ]
         rootAttitude: [ 
-          1, -2.68203825e-13, -1.27022134e-07, 
-          2.72191065e-13, 1, 3.13901208e-08, 
-          1.27022134e-07, -3.13901208e-08, 1 ]
+          1, -3.68841809e-08, 8.90258866e-07, 
+          3.6884045e-08, 1, 1.52650025e-07, 
+          -8.90258872e-07, -1.52649992e-07, 1 ]
         jointPositions: [  ]
-        initialRootPosition: [ 0.234296298, 0.203954292, 0.00960990767 ]
+        initialRootPosition: [ 0.565, 0.1, 0.2249 ]
+        initialRootAttitude: [ 
+          1, 6.66447597e-11, -1.76133688e-07, 
+          -6.66385291e-11, 1, 3.53741575e-08, 
+          1.76133688e-07, -3.53741574e-08, 1 ]
+        zmp: [ 0, 0, 0 ]
+        collisionDetection: true
+        selfCollisionDetection: false
+        isEditable: true
+    - 
+      id: 15
+      name: "box1"
+      plugin: Body
+      class: BodyItem
+      data: 
+        modelFile: "/home/leus/choreonoid/share/model/misc/box18.body"
+        currentBaseLink: "body"
+        rootPosition: [ 0.900001254, -2.66792267e-06, 0.0149727164 ]
+        rootAttitude: [ 
+          0.999999997, -3.43755582e-07, 7.41732457e-05, 
+          3.54320998e-07, 0.99999999, -0.000142442448, 
+          -7.4173196e-05, 0.000142442474, 0.999999987 ]
+        jointPositions: [  ]
+        initialRootPosition: [ 0.9, 0, 0.05 ]
         initialRootAttitude: [ 
           1, 0, 0, 
           0, 1, 0, 
@@ -256,9 +325,9 @@ views:
     class: ItemTreeView
     mounted: true
     state: 
-      selected: [ 1, 3 ]
-      checked: [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
-      expanded: [ 1, 3, 8, 12 ]
+      selected: [ 3 ]
+      checked: [ 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
+      expanded: [ 1, 3, 8, 9, 10, 14 ]
   - 
     id: 3
     plugin: Base
@@ -270,7 +339,7 @@ views:
     class: SceneView
     mounted: true
     state: 
-      editMode: false
+      editMode: true
       viewpointControlMode: thirdPerson
       collisionLines: false
       polygonMode: fill
@@ -308,9 +377,9 @@ views:
           fieldOfView: 0.6978
           near: 0.01
           far: 100
-          eye: [ 0.906985922, -3.9006173, 0.986818071 ]
-          direction: [ 0.0699428234, 0.997550684, -0.000796361652 ]
-          up: [ 5.56998001e-05, 0.000794411363, 0.999999683 ]
+          eye: [ 0.200315137, -2.25571961, 1.46941567 ]
+          direction: [ -0.0870667058, 0.964794444, -0.24817548 ]
+          up: [ -0.0223056517, 0.247171047, 0.968715093 ]
         - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
@@ -349,7 +418,7 @@ views:
       spinBox: true
       slider: true
       labelOnLeft: true
-      currentBodyItem: 9
+      currentBodyItem: 10
   - 
     id: 8
     plugin: Body
@@ -357,13 +426,16 @@ views:
     mounted: true
     state: 
       listingMode: "Link List"
-      currentBodyItem: 9
+      currentBodyItem: 10
       bodyItems: 
         - 
           id: 2
           selectedLinks: [ 0 ]
         - 
-          id: 12
+          id: 10
+          selectedLinks: [ 0 ]
+        - 
+          id: 14
           selectedLinks: [ 0 ]
   - 
     id: 9
@@ -377,11 +449,11 @@ views:
 toolbars: 
   "TimeBar": 
     minTime: 0
-    maxTime: 60
+    maxTime: 228.127
     frameRate: 1000
     playbackFrameRate: 50
     idleLoopDrivenMode: false
-    currentTime: 4.05
+    currentTime: 228.127
     speedScale: 1
     syncToOngoingUpdates: false
     autoExpansion: true
@@ -394,7 +466,7 @@ toolbars:
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
   "BodyBar": 
-    current: 9
+    current: 10
   "LeggedBodyBar": 
     stanceWidth: 0.15
   "BodyMotionGenerationBar": 
@@ -451,7 +523,22 @@ Body:
         showPpcom: false
         showZmp: false
       - 
-        bodyItem: 12
+        bodyItem: 10
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 13
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 14
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
+      - 
+        bodyItem: 15
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
@@ -474,12 +561,12 @@ viewAreas:
     contents: 
       type: splitter
       orientation: horizontal
-      sizes: [ 123, 1791 ]
+      sizes: [ 185, 1729 ]
       children: 
         - 
           type: splitter
           orientation: vertical
-          sizes: [ 491, 489 ]
+          sizes: [ 490, 490 ]
           children: 
             - 
               type: pane
@@ -497,7 +584,7 @@ viewAreas:
             - 
               type: splitter
               orientation: horizontal
-              sizes: [ 0, 1785 ]
+              sizes: [ 0, 1723 ]
               children: 
                 - 
                   type: pane
@@ -518,4 +605,4 @@ layoutOfToolBars:
       - { name: "ScriptBar", x: 47, priority: 3 }
       - { name: "TimeBar", x: 47, priority: 1 }
       - { name: "SceneBar", x: 1455, priority: 2 }
-      - { name: "SimulationBar", x: 1757, priority: 4 }
+      - { name: "SimulationBar", x: 1464, priority: 0 }
