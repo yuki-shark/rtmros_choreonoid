@@ -16,7 +16,7 @@ class JAXON_RED_HrpsysConfigurator(ChoreonoidHrpsysConfiguratorOrg):
             ['es', "EmergencyStopper"],
             ['ic', "ImpedanceController"],
             ['abc', "AutoBalancer"],
-            ['st', "Stabilizer"],
+            # ['st', "Stabilizer"],
             ['co', "CollisionDetector"],
             # ['tc', "TorqueController"],
             # ['te', "ThermoEstimator"],

@@ -28,7 +28,7 @@ def ros_service_init ():
     s = rospy.Service('/choreonoid_service', StringString, roscallback)
     ## rospy.spin()
 
-def addExternalForce(robotname = "JAXON_RED", linkname = "WAIST", pos = [0,0,1.0], force = [100,0,0], tm = 0.2):
+def addExternalForce(robotname = "JAXON_RED", linkname = "WAIST", pos = [0,0,0], force = [100,0,0], tm = 0.1):
     #addExternalForce("JAXON_RED", "WAIST", [0, 0, 1.0], [100, 0, 0], 0.2)
     global thisSimulatorItem
 
