@@ -54,6 +54,21 @@
         pkg="topic_tools" type="relay"
         args="/multisense_local/right/image_rect_color /multisense_local/right/image_rect" />
 
+  <node pkg="hrpsys_ros_bridge" name="CHESTCAMERA"
+        type="ImageSensorROSBridge"
+        output="$(arg OUTPUT)" args="$(arg openrtm_args)" ns="chest_camera">
+    <param name="frame_id" value="chest_camera_optical_frame" />
+    <rosparam param="camera_param_K">[240, 0, 319.5,  0, 240, 239.5,  0, 0, 1]</rosparam>
+    <rosparam param="camera_param_P">[240, 0, 319.5, 0,  0, 240, 239.5, 0,  0, 0, 1, 0]</rosparam>
+    <rtconnect from="JAXON_RED(Robot)0.rtc:CHEST_CAMERA"
+               to="CHESTCAMERA.rtc:timedImage" />
+    <rtactivate component="CHESTCAMERA.rtc" />
+    <remap from="image_raw" to="image_rect_color" />
+  </node>
+  <node name="chest_image_rect_relay"
+        pkg="topic_tools" type="relay"
+        args="/chest_camera/image_rect_color /chest_camera/image_rect" />
+
   <node pkg="hrpsys_ros_bridge" name="range_bridge"
         type="RangeSensorROSBridge"
         output="$(arg OUTPUT)" args="$(arg openrtm_args)" ns="multisense">
@@ -88,6 +103,9 @@
   <node name="head_range_frame_id" pkg="tf"
         type="static_transform_publisher"
         args="0 0 0 0 0 0 /HEAD_RANGE head_hokuyo_frame 20" />
+  <node name="chest_frame_id" pkg="tf"
+        type="static_transform_publisher"
+        args="0 0 0 0 0 0 /CHEST_CAMERA chest_camera_optical_frame 20" />
   <!--
   <node name="head_root_frame_id" pkg="tf"
         type="static_transform_publisher"

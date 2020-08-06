@@ -43,7 +43,7 @@ PROTO Segment [
   exposedField    MFNode      children          [ ]
   exposedField    SFNode      coord             NULL
   exposedField    MFNode      displacers        [ ]
-  exposedField    SFFloat     mass              0 
+  exposedField    SFFloat     mass              0
   exposedField    MFFloat     momentsOfInertia  [ 0 0 0 0 0 0 0 0 0 ]
   exposedField    SFString    name              ""
   eventIn         MFNode      addChildren
@@ -90,7 +90,7 @@ PROTO Humanoid [
         children IS viewpoints
       }
       Group {
-        children IS humanoidBody 
+        children IS humanoidBody
       }
     ]
   }
@@ -136,7 +136,7 @@ PROTO RangeSensor [
   }
 }
 
-PROTO ForceSensor [  
+PROTO ForceSensor [
   exposedField SFVec3f    maxForce    -1 -1 -1
   exposedField SFVec3f    maxTorque   -1 -1 -1
   exposedField SFVec3f    translation 0 0 0
@@ -377,15 +377,27 @@ DEF JAXON_JVRC Humanoid {
                       ]
                     } #Segment CHEST_LINK2
                     DEF CHEST_CAMERA VisionSensor {
-                       name "fisheye"
+                       # name "fisheye"
+                       # translation 0.164 0 -0.007
+                       # rotation 0.3243587440432960 -0.3243587440432962 -0.8885847232117547 1.6886478500368325
+                       # type "COLOR"
+                       # frontClipDistance 0.1
+                       # width 640
+                       # height 640
+                       # frameRate 5
+                       # fieldOfView 2.61799 ## 150 deg / fisheye like
+                       # sensorId 2
+                       name "CHEST_CAMERA"
                        translation 0.164 0 -0.007
-                       rotation 0.3243587440432960 -0.3243587440432962 -0.8885847232117547 1.6886478500368325
-                       type "COLOR"
+                       # rotation 0.0 0.0 -1.0 1.5708 # 0 deg
+                       rotation 0.2505628 -0.2505628 -0.9351131 1.6378338 # 30 deg
+                       # rotation 0.3574068 -0.3574068 -0.8628562 1.7177715 # 45 deg
+                       type "COLOR_DEPTH"
                        frontClipDistance 0.1
                        width 640
-                       height 640
-                       frameRate 5
-                       fieldOfView 2.61799 ## 150 deg / fisheye like
+                       height 480
+                       frameRate 15
+                       fieldOfView 1.22173 ## 70 deg
                        sensorId 2
                     }
                     DEF HEAD_JOINT0 Joint {
@@ -1147,7 +1159,7 @@ DEF JAXON_JVRC Humanoid {
                                                           visual [ Inline { url "RARM_LINK7_JVRC.wrl" } ] # visual
                                                           collision [ Inline { url "collision_directory/RARM_LINK7_JVRC.wrl" } ] # collision
                                                         } # surface
-                                                        ### checkerboard for calibration 
+                                                        ### checkerboard for calibration
                                                         #Transform {
                                                         #   translation 0.06 0 -0.33
                                                         #   rotation 0 1 0 1.5707963267948966
