@@ -69,6 +69,18 @@
         pkg="topic_tools" type="relay"
         args="/chest_camera/image_rect_color /chest_camera/image_rect" />
 
+  <node pkg="hrpsys_ros_bridge" name="CHESTDEPTH"
+        type="PointCloudROSBridge"
+        output="$(arg OUTPUT)" args="$(arg openrtm_args)" ns="chest_camera">
+    <param name="frame_id" value="chest_camera_optical_frame" />
+    <param name="publish_depth" value="true" />
+    <param name="transformed_camera_frame" value="true" />
+    <remap from="points" to="depth_registered/points" />
+    <rtconnect from="JAXON_RED(Robot)0.rtc:CHEST_DEPTH"
+               to="CHESTDEPTH.rtc:points" />
+    <rtactivate component="CHESTDEPTH.rtc" />
+  </node>
+
   <node pkg="hrpsys_ros_bridge" name="range_bridge"
         type="RangeSensorROSBridge"
         output="$(arg OUTPUT)" args="$(arg openrtm_args)" ns="multisense">
@@ -88,8 +100,10 @@
     <param name="transformed_camera_frame" value="true" />
     <remap from="points" to="organized_image_points2_color" />
     <rtconnect from="JAXON_RED(Robot)0.rtc:HEAD_LEFT_DEPTH"
-               to="PointCloudROSBridge0.rtc:points" />
-    <rtactivate component="PointCloudROSBridge0.rtc" />
+               to="pointcloud_bridge.rtc:points" />
+    <rtactivate component="pointcloud_bridge.rtc" />
+    <!--            to="PointCloudROSBridge0.rtc:points" /> -->
+    <!-- <rtactivate component="PointCloudROSBridge0.rtc" /> -->
   </node>
   <node name="multisense_organized_image_points2_relay"
         pkg="topic_tools" type="relay"
