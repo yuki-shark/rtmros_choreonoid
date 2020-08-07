@@ -413,7 +413,7 @@ DEF JAXON_JVRC Humanoid {
                        height 480
                        frameRate 15
                        fieldOfView 1.22173 ## 70 deg
-                       sensorId 2
+                       sensorId 7
                     }
                     DEF HEAD_JOINT0 Joint {
                       translation -0.015 0 0.0835
