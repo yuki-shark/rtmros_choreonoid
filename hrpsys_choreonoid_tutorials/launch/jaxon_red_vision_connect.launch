@@ -72,7 +72,7 @@
   <node pkg="hrpsys_ros_bridge" name="CHESTDEPTH"
         type="PointCloudROSBridge"
         output="$(arg OUTPUT)" args="$(arg openrtm_args)" ns="chest_camera">
-    <param name="frame_id" value="chest_depth_optical_frame" />
+    <param name="frame_id" value="chest_camera_optical_frame" />
     <param name="publish_depth" value="true" />
     <param name="transformed_camera_frame" value="true" />
     <remap from="points" to="depth_registered/points" />
@@ -120,9 +120,6 @@
   <node name="chest_camera_frame_id" pkg="tf"
         type="static_transform_publisher"
         args="0 0 0 0 0 0 /CHEST_CAMERA chest_camera_optical_frame 20" />
-  <node name="chest_depth_frame_id" pkg="tf"
-        type="static_transform_publisher"
-        args="0 0 0 0 0 0 /CHEST_DEPTH chest_depth_optical_frame 20" />
   <!--
   <node name="head_root_frame_id" pkg="tf"
         type="static_transform_publisher"

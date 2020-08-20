@@ -361,28 +361,13 @@ DEF JAXON_JVRC Humanoid {
                        # rotation 0.0 0.0 -1.0 1.5708 # 0 deg
                        rotation 0.2505628 -0.2505628 -0.9351131 1.6378338 # 30 deg
                        # rotation 0.3574068 -0.3574068 -0.8628562 1.7177715 # 45 deg
-                       type "COLOR"
+                       type "COLOR_DEPTH"
                        frontClipDistance 0.1
                        width 640
                        height 480
                        frameRate 15
                        fieldOfView 1.22173 ## 70 deg
                        sensorId 2
-                    }
-                    DEF CHEST_DEPTH VisionSensor {
-                       name "CHEST_DEPTH"
-                       translation 0.164 0 -0.007
-                       # rotation 0.0 0.0 -1.0 1.5708 # 0 deg
-                       rotation 0.2505628 -0.2505628 -0.9351131 1.6378338 # 30 deg
-                       # rotation 0.3574068 -0.3574068 -0.8628562 1.7177715 # 45 deg
-                       type "COLOR_DEPTH"
-                       frontClipDistance 0.1
-                       backClipDistance  5.0
-                       width 640
-                       height 480
-                       frameRate 15
-                       fieldOfView 1.22173 ## 70 deg
-                       sensorId 7
                     }
                     DEF HEAD_JOINT0 Joint {
                       translation -0.015 0 0.0835
@@ -1483,7 +1468,7 @@ DEF JAXON_JVRC Humanoid {
                       # ulimit 2.79253
                       # llimit 0
                       uvlimit 17
-                      lvlimit -17
+                       lvlimit -17
                       climit [100.0]
                       gearRatio   240
                       torqueConst 0.0205
@@ -1538,7 +1523,7 @@ DEF JAXON_JVRC Humanoid {
                               # ulimit 1.2136
                               # llimit -1.0807
                               # from CAD
-                              # ulimit 1.0472
+                               # ulimit 1.0472
                               # llimit -1.0472
                               uvlimit 17
                               lvlimit -17
